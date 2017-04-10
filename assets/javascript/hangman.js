@@ -104,6 +104,7 @@ pickChoice = function() {
     computerRandomArtist = bandList[Math.floor(Math.random() * bandList.length)];
     console.log(computerRandomArtist.name);
     playMusic.src = computerRandomArtist.audioLocation;
+    playMusic.load();
 }
 
 resetGame = function() {
