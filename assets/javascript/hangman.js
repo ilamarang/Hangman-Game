@@ -2,8 +2,8 @@ var validKeyboardInputs = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'
 ];
-var computerPick
-var computerChoice;
+var computerRandomArtist;
+
 
 
 var bandList = [
@@ -88,7 +88,7 @@ var playMusic = new Audio("");
 window.onload = function() {
 
     pickChoice();
-    console.log(computerChoice);
+    console.log(computerRandomArtist.name);
 
     populateComputerGuess();
     displayComputerKeyboard();
@@ -98,8 +98,8 @@ window.onload = function() {
 
 pickChoice = function() {
 
-    computerPick = bandList[Math.floor(Math.random() * bandList.length)];
-    computerChoice = computerPick.name;
+    computerRandomArtist = bandList[Math.floor(Math.random() * bandList.length)];
+    
 
 }
 
@@ -114,7 +114,7 @@ populateComputerGuess = function() {
     var guessBlankRow;
     var guessBlankWord;
 
-    for (counterBlanks = 0; counterBlanks < computerChoice.length; counterBlanks++) {
+    for (counterBlanks = 0; counterBlanks < computerRandomArtist.name.length; counterBlanks++) {
 
         guessBlankRow = document.createElement("div");
         guessBlankRow.class = "row";
@@ -132,12 +132,12 @@ populateResults = function() {
 
     if (countRemainingAttempts === 0) {
         document.getElementById("lblRemainingAttempts").innerHTML = displayLostMessage;
-    } else if (userGuess === computerChoice) {
+    } else if (userGuess === computerRandomArtist.name) {
         document.getElementById("lblRemainingAttempts").innerHTML = displaySuccessMessage;
         stopGame = true;
-        document.getElementById("imgDisplayPic").src = computerPick.imgLocation;
+        document.getElementById("imgDisplayPic").src = computerRandomArtist.imgLocation;
         document.getElementById("imgDisplayPic").style.visibility = "visible";
-        playMusic.src = computerPick.audioLocation;
+        playMusic.src = computerRandomArtist.audioLocation;
 
         playMusic.play();
 
@@ -171,14 +171,14 @@ clickEvent = function() {
 
     if (countRemainingAttempts > 0 && !stopGame) {
 
-        for (var i = 0; i < computerChoice.length; i++) {
+        for (var i = 0; i < computerRandomArtist.name.length; i++) {
 
-            if (computerChoice[i] === this.innerHTML.toUpperCase()) {
+            if (computerRandomArtist.name[i] === this.innerHTML.toUpperCase()) {
                 if (this.innerHTML != "-") {
 
-                    document.getElementById("computerGuess" + i).innerHTML = computerChoice[i];
+                    document.getElementById("computerGuess" + i).innerHTML = computerRandomArtist.name[i];
                     foundMatch = true;
-                    userGuess = userGuess.substr(0, i) + computerChoice[i] + userGuess.substr(i + 1);
+                    userGuess = userGuess.substr(0, i) + computerRandomArtist.name[i] + userGuess.substr(i + 1);
 
 
                 }
