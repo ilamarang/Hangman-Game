@@ -10,51 +10,65 @@ var bandList = [
 
     {
         name: "BACKSTREET",
-        imgLocation: "./assets/images/Backstreet.jpg"
+        imgLocation: "./assets/images/Backstreet.jpg",
+		audioLocation: "./assets/audio/Backstreet.mp3"
+
     },
     {
         name: "BEATLES",
-        imgLocation: "./assets/images/Beatles.jpg"
+        imgLocation: "./assets/images/Beatles.jpg",
+        audioLocation: "./assets/audio/Beatles.mp3"
     },
     {
         name: "EAGLES",
-        imgLocation: "./assets/images/Eagles.jpg"
+        imgLocation: "./assets/images/Eagles.jpg",
+        audioLocation: "./assets/audio/Eagles.mp3"
     },
     {
         name: "ADELE",
-        imgLocation: "./assets/images/Adele.jpg"
+        imgLocation: "./assets/images/Adele.jpg",
+        audioLocation: "./assets/audio/Adele.mp3"
     },
     {
         name: "RAHMAN",
-        imgLocation: "./assets/images/Rahman.jpg"
+        imgLocation: "./assets/images/Rahman.jpg",
+        audioLocation: "./assets/audio/Rahman.mp3"
     },
     {
         name: "ILAYARAJA",
-        imgLocation: "./assets/images/Ilayaraja.jpeg"
+        imgLocation: "./assets/images/Ilayaraja.jpeg",
+        audioLocation: "./assets/audio/Ilayaraja.mp3"
     },
     {
         name: "EDSHEERAN",
-        imgLocation: "./assets/images/Edsheeran.jpg"
+        imgLocation: "./assets/images/Edsheeran.jpg",
+        audioLocation: "./assets/audio/Edsheeran.mp3"
     },
     {
         name: "TAYLORSWIFT",
-        imgLocation: "./assets/images/Taylorswift.jpg"
+        imgLocation: "./assets/images/Taylorswift.jpg",
+        audioLocation: "./assets/audio/Taylorswift.mp3"
     },
     {
         name: "CORRS",
-        imgLocation: "./assets/images/Corrs.jpg"
+        imgLocation: "./assets/images/Corrs.jpg",
+      	audioLocation: "./assets/audio/Corrs.mp3"  
     },
     {
         name: "BRYANADAMS",
-        imgLocation: "./assets/images/Bryanadams.jpg"
+        imgLocation: "./assets/images/Bryanadams.jpg",
+        audioLocation: "./assets/audio/Bryanadams.mp3"
+
     },
     {
         name: "KATIEPERRY",
-        imgLocation: "./assets/images/Katieperry.jpg"
+        imgLocation: "./assets/images/Katieperry.jpg",
+        audioLocation: "./assets/audio/Katieperry.mp3"
     },
     {
         name: "JOHNLEGEND",
-        imgLocation: "./assets/images/Johnlegend.jpg"
+        imgLocation: "./assets/images/Johnlegend.jpg",
+        audioLocation: "./assets/audio/Johnlegend.mp3"
     },
 ]
 
@@ -67,8 +81,6 @@ var stopGame = false;
 var displayLostMessage = " SORRY! <br> You have exhausted your attempts. Please click Restart to Play again";
 var displaySuccessMessage = "SUCCESS! <br> Enjoy the music! - Please click Restart to play again";
 var displayRemainingMessage = "Remaining Attempts:  ";
-var audioLocation = "./assets/audio/";
-var audioFormat = ".mp3";
 var playMusic = new Audio("");
 
 
@@ -125,7 +137,7 @@ populateResults = function() {
         stopGame = true;
         document.getElementById("imgDisplayPic").src = computerPick.imgLocation;
         document.getElementById("imgDisplayPic").style.visibility = "visible";
-        playMusic.src = audioLocation + computerChoice + audioFormat;
+        playMusic.src = computerPick.audioLocation;
 
         playMusic.play();
 
