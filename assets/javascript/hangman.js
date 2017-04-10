@@ -15,9 +15,10 @@ var bandList = [
 {name:"ILAYARAJA",imgLocation:"./assets/images/Ilayaraja.jpeg"},
 {name:"EDSHEERAN",imgLocation:"./assets/images/Edsheeran.jpg"},
 {name:"TAYLORSWIFT",imgLocation:"./assets/images/Taylorswift.jpg"},
-{name:"CORRS",imgLocation:"./assets/images/Corrs.jpeg"},
-{name:"BRYANADAMS",imgLocation:"./assets/images/Bryanadams.jpeg"},
-
+{name:"CORRS",imgLocation:"./assets/images/Corrs.jpg"},
+{name:"BRYANADAMS",imgLocation:"./assets/images/Bryanadams.jpg"},
+{name:"KATIEPERRY",imgLocation:"./assets/images/Katieperry.jpg"},
+{name:"JOHNLEGEND",imgLocation:"./assets/images/Johnlegend.jpg"},
 ]
 
 
@@ -27,7 +28,7 @@ var userGuess = "";
 var displayBlank = "_";
 var stopGame = false;
 var displayLostMessage = " SORRY! <br> You have exhausted your attempts. Please click Restart to Play again";
-var displaySuccessMessage = "SUCCESS!!! <br> You Won. Please click Restart to play again";
+var displaySuccessMessage = "SUCCESS! <br> Enjoy the music! - Please click Restart to play again";
 var displayRemainingMessage = "Remaining Attempts:  ";
 var audioLocation = "./assets/audio/";
 var audioFormat = ".mp3";
@@ -50,9 +51,7 @@ pickChoice = function () {
 
 	computerPick = bandList[Math.floor(Math.random() * bandList.length)];
 	computerChoice = computerPick.name;
-	//computerChoice = "TESTER";
-	console.log("Object Choice" + computerChoice);
-	//computerChoice = computerChoice.replace(/\s/g, "-"); 
+	
 }
 
 resetGame = function () {
@@ -80,9 +79,7 @@ populateComputerGuess = function () {
 
 }
 populateResults = function () {
-	console.log(countRemainingAttempts);
-	console.log("User Guess Length" + userGuess.length);
-	console.log("Computer Choice Length" + computerChoice.length);
+
 
 	if(countRemainingAttempts===0)
 	{
@@ -130,7 +127,7 @@ clickEvent = function () {
 	
 	if(countRemainingAttempts > 0 && !stopGame)
 	{
-		console.log("Inside click event " + countRemainingAttempts);
+		
 		for (var i = 0; i < computerChoice.length; i++) {
 
 			if (computerChoice[i] === this.innerHTML.toUpperCase()) {
@@ -139,8 +136,7 @@ clickEvent = function () {
 				document.getElementById("computerGuess" + i).innerHTML = computerChoice[i];
 				foundMatch = true;	
 				userGuess = userGuess.substr(0,i) + computerChoice[i] + userGuess.substr(i+1);
-				//userGuess = userGuess + computerChoice[i];
-				console.log("Customer Guess" + userGuess);		
+					
 
 				}
 				
@@ -149,7 +145,7 @@ clickEvent = function () {
 
 		}
 		if(!foundMatch) {
-			console.log("Inside found Match" + countRemainingAttempts);
+			
 			countRemainingAttempts--;
 						
 		}
@@ -160,7 +156,7 @@ clickEvent = function () {
 	}
 }
 
-/*$(document).ready(function() {
+$(document).ready(function() {
 	$('#myCarousel').carousel({
 	interval: 2000
 	})
@@ -170,4 +166,4 @@ clickEvent = function () {
 	});
     
     
-}); */
+}); 

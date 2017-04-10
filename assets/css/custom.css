@@ -5,9 +5,9 @@ body {
 
 }
 body {
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'chalkduster',fantasy,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     overflow-x: hidden;
-    background-image: url("../images/cork-wallet.png");
+    background-image: url("../images/music.jpg");
 }
 p {
     font-size: 15px;
@@ -26,6 +26,7 @@ a.active {
 
 h2 {
     text-align: center;
+
 }
 body {
     padding-top: 1em;
@@ -141,6 +142,7 @@ float: left;
   cursor: pointer;
   border-radius: 5px;
   border: solid 1px #fff;
+  background-image: url("../images/nature.jpg");
 }
 .jumbotron {
     padding-top: 0;
@@ -196,4 +198,17 @@ float: left;
 }
 .carousel-indicators .active {
 background: #333333;
+}
+#displayCustomerGuess {
+    background: grey;
+    border-radius: 0.5em;
+    background-image: url("../images/stones.jpg");
+    
+}
+#reset {
+    background-image: url("../images/nature.jpg");
+}
+
+#displayResults {
+
 }
