@@ -11,61 +11,50 @@ var bandList = [
     {
         name: "BACKSTREET",
         imgLocation: "./assets/images/Backstreet.jpg",
-		audioLocation: "./assets/audio/Backstreet.mp3"
+        audioLocation: "./assets/audio/Backstreet.mp3"
 
-    },
-    {
+    }, {
         name: "BEATLES",
         imgLocation: "./assets/images/Beatles.jpg",
         audioLocation: "./assets/audio/Beatles.mp3"
-    },
-    {
+    }, {
         name: "EAGLES",
         imgLocation: "./assets/images/Eagles.jpg",
         audioLocation: "./assets/audio/Eagles.mp3"
-    },
-    {
+    }, {
         name: "ADELE",
         imgLocation: "./assets/images/Adele.jpg",
         audioLocation: "./assets/audio/Adele.mp3"
-    },
-    {
+    }, {
         name: "RAHMAN",
         imgLocation: "./assets/images/Rahman.jpg",
         audioLocation: "./assets/audio/Rahman.mp3"
-    },
-    {
+    }, {
         name: "ILAYARAJA",
         imgLocation: "./assets/images/Ilayaraja.jpeg",
         audioLocation: "./assets/audio/Ilayaraja.mp3"
-    },
-    {
+    }, {
         name: "EDSHEERAN",
         imgLocation: "./assets/images/Edsheeran.jpg",
         audioLocation: "./assets/audio/Edsheeran.mp3"
-    },
-    {
+    }, {
         name: "TAYLORSWIFT",
         imgLocation: "./assets/images/Taylorswift.jpg",
         audioLocation: "./assets/audio/Taylorswift.mp3"
-    },
-    {
+    }, {
         name: "CORRS",
         imgLocation: "./assets/images/Corrs.jpg",
-      	audioLocation: "./assets/audio/Corrs.mp3"  
-    },
-    {
+        audioLocation: "./assets/audio/Corrs.mp3"
+    }, {
         name: "BRYANADAMS",
         imgLocation: "./assets/images/Bryanadams.jpg",
         audioLocation: "./assets/audio/Bryanadams.mp3"
 
-    },
-    {
+    }, {
         name: "KATIEPERRY",
         imgLocation: "./assets/images/Katieperry.jpg",
         audioLocation: "./assets/audio/Katieperry.mp3"
-    },
-    {
+    }, {
         name: "JOHNLEGEND",
         imgLocation: "./assets/images/Johnlegend.jpg",
         audioLocation: "./assets/audio/Johnlegend.mp3"
@@ -73,23 +62,37 @@ var bandList = [
 ]
 
 
-var countRemainingAttempts = 10;
-var foundMatch = false;
-var userGuess = "";
-var displayBlank = "_";
-var stopGame = false;
-var displayLostMessage = " SORRY! <br> You have exhausted your attempts. Please click Restart to Play again";
-var displaySuccessMessage = "SUCCESS! <br> Enjoy the music! - Please click Restart to play again";
-var displayRemainingMessage = "Remaining Attempts:  ";
+var countRemainingAttempts;
+var foundMatch;
+var userGuess;
+var displayBlank;
+var stopGame;
+var displayLostMessage;
+var displaySuccessMessage;
+var displayRemainingMessage;
 var playMusic = new Audio("");
 
+
+initialize = function() {
+
+    countRemainingAttempts = 10;
+    foundMatch = false;
+    userGuess = "";
+
+    displayBlank = "_";
+    stopGame = false;
+    displayLostMessage = " SORRY! <br> You have exhausted your attempts. Please click Restart to Play again";
+    displaySuccessMessage = "SUCCESS! <br> Enjoy the music! - Please click Restart to play again";
+    displayRemainingMessage = "Remaining Attempts:  ";
+
+
+}
 
 
 window.onload = function() {
 
+    initialize();
     pickChoice();
-    console.log(computerRandomArtist.name);
-
     populateComputerGuess();
     displayComputerKeyboard();
 }
@@ -99,13 +102,30 @@ window.onload = function() {
 pickChoice = function() {
 
     computerRandomArtist = bandList[Math.floor(Math.random() * bandList.length)];
-    
+    console.log(computerRandomArtist.name);
 
 }
 
 resetGame = function() {
     playMusic.src = "";
-    window.location.reload();
+
+    initialize();
+    pickChoice();
+
+
+    var element = document.getElementById("validKeyboardInputs");
+    element.parentNode.removeChild(element);
+    element = document.getElementById("displayCustomerGuess");
+
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+
+    displayComputerKeyboard();
+    populateComputerGuess();
+    document.getElementById("imgDisplayPic").style.visibility = "hidden";
+    document.getElementById("lblRemainingAttempts").innerHTML = displayRemainingMessage + countRemainingAttempts;
+
 }
 
 populateComputerGuess = function() {
@@ -123,6 +143,7 @@ populateComputerGuess = function() {
         guessBlankWord.id = "computerGuess" + counterBlanks;
         guessBlankRow.appendChild(guessBlankWord);
         elementBlankGuess.appendChild(guessBlankRow);
+
         userGuess = userGuess + displayBlank;
     }
 
