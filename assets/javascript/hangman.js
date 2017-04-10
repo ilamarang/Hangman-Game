@@ -103,7 +103,7 @@ pickChoice = function() {
 
     computerRandomArtist = bandList[Math.floor(Math.random() * bandList.length)];
     console.log(computerRandomArtist.name);
-
+    playMusic.src = computerRandomArtist.audioLocation;
 }
 
 resetGame = function() {
@@ -158,7 +158,7 @@ populateResults = function() {
         stopGame = true;
         document.getElementById("imgDisplayPic").src = computerRandomArtist.imgLocation;
         document.getElementById("imgDisplayPic").style.visibility = "visible";
-        playMusic.src = computerRandomArtist.audioLocation;
+        
 
         playMusic.play();
 
