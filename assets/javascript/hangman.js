@@ -7,14 +7,16 @@ var computerChoice;
 
 var bandList = [
 
-{name:"BACKSTREET",imgLocation:"./assets/images/Backstreet.jpeg" },
+{name:"BACKSTREET",imgLocation:"./assets/images/Backstreet.jpg" },
 {name:"BEATLES",imgLocation:"./assets/images/Beatles.jpg" },
 {name:"EAGLES",imgLocation:"./assets/images/Eagles.jpg" },
 {name:"ADELE",imgLocation:"./assets/images/Adele.jpg" },
 {name:"RAHMAN",imgLocation:"./assets/images/Rahman.jpg"},
-{name:"RAJA",imgLocation:"./assets/images/Raja.jpg"},
+{name:"ILAYARAJA",imgLocation:"./assets/images/Ilayaraja.jpeg"},
 {name:"EDSHEERAN",imgLocation:"./assets/images/Edsheeran.jpg"},
 {name:"TAYLORSWIFT",imgLocation:"./assets/images/Taylorswift.jpg"},
+{name:"CORRS",imgLocation:"./assets/images/Corrs.jpeg"},
+{name:"BRYANADAMS",imgLocation:"./assets/images/Bryanadams.jpeg"},
 
 ]
 
@@ -158,3 +160,14 @@ clickEvent = function () {
 	}
 }
 
+/*$(document).ready(function() {
+	$('#myCarousel').carousel({
+	interval: 2000
+	})
+    
+    $('#myCarousel').on('slid.bs.carousel', function() {
+    	//alert("slid");
+	});
+    
+    
+}); */

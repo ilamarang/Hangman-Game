@@ -1,4 +1,4 @@
-	<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 
 <html>
 <head>
@@ -18,44 +18,106 @@
 <body>
 	<!-- Header -->
 	<div class="container">
-		<div class="jumbotron">
+	<!--	<div class="jumbotron">
 			<h1>Hangman Game</h1>      
 			<p>Guess the band and play their famous songs!.</p>
+		</div>  -->
+
+
+
+
+
+		<div class="well">
+			<div id="myCarousel" class="carousel slide">
+
+				<!-- Carousel items -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="row">
+						<div class="col-sm-3"><a href="#x"><img src="./assets/images/Adele.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x"><img src="./assets/images/Backstreet.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x"><img src="./assets/images/Eagles.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x"><img src="./assets/images/Beatles.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							
+						</div>
+						<!--/row-->
+					</div>
+					<!--/item-->
+					<div class="item">
+						<div class="row">
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Taylorswift.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Edsheeran.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Rahman.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Ilayaraja.jpeg" alt="Image" class="img-responsive"></a>
+							</div>
+						</div>
+						<!--/row-->
+					</div>
+					<!--/item-->
+					<div class="item">
+						<div class="row">
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Corrs.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Johnlegend.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Katieperry.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+							<div class="col-sm-3"><a href="#x" class="thumbnail"><img src="./assets/images/Bryanadams.jpg" alt="Image" class="img-responsive"></a>
+							</div>
+						</div>
+						<!--/row-->
+					</div>
+					<!--/item-->
+				</div>
+				<!--/carousel-inner--> <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+			</div>
+			<!--/myCarousel-->
 		</div>
+		<!--/well-->
+
 
 	</div>
 
-	
+
 	<div class="container">
 
 		<div class="row">
 			<div class="col-md-5 border main_content">
 				<h3> Guess the correct word to play a song! </h3>
-				
+
 				<div class="row" id="keyboardInputs"> </div>
 				<div class="row"> 
 					<div class="form-group">
 						<label class="col-md-4 control-label" for="singlebutton"></label>
 						<div class="col-md-4 center-block">
 							<button id="reset" class="btn btn-primary center-block" onclick="resetGame()">
-							RESTART
+								RESTART
 							</button>
 						</div>  
 					</div>	
-					
+
 				</div>	
 
 			</div>
 
 			<div class="col-md-1 border" id="displayCustomerGuess">
-				
+
 
 
 			</div>
-			
+
 			<div class="col-md-6 border text-center social_media margin-bottom-xs margin-bottom-sm margin-bottom-md margin-bottom-lg" id="displayResults">
 
-				
+
 				<h3> Game On! </h3>
 				<div class="row">
 					<label id="lblRemainingAttempts"> Remaining Attempts: 10 </label>
@@ -66,26 +128,29 @@
 				</div>
 				<div class="row text-center">
 					<img alt="" class="img-responsive"  id="imgDisplayPic" width="100%">      
-                                                
+
 				</div>
 
 			</div>
 
 		</div>
-	</div>	
+		
 
 
-	<nav class="navbar navbar-default  navbar-fixed-bottom" role="navigation">
-		<div class="container text-center">
-			<p class="navbar-text col-md-12 col-sm-12 col-xs-12 footer">&copy;Copyright Ilamaran Gurunathan 2017</p>
-		</div>
-	</nav>
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	</div>
 
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- Hangman Javascript -->
-	<script src="./assets/javascript/hangman.js"></script>
+</div>	
+
+
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Hangman Javascript -->
+<script src="./assets/javascript/hangman.js"></script>
 </body>
 </html>
