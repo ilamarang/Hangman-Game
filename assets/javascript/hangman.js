@@ -152,7 +152,9 @@ clickEvent = function () {
 		// Populate Results of the Click
 		populateResults();
 		//Reset the value
-		foundMatch = false;
+		//this.style.visibility = "hidden";
+		$(this).fadeOut(500);
+
 	}
 }
 
