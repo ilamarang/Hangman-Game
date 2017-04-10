@@ -10,13 +10,15 @@ var bandList = [
 {name:"BACKSTREET",imgLocation:"./assets/images/Backstreet.jpeg" },
 {name:"BEATLES",imgLocation:"./assets/images/Beatles.jpg" },
 {name:"EAGLES",imgLocation:"./assets/images/Eagles.jpg" },
-{name:"MADONNA",imgLocation:"./assets/images/Madonna.jpg" },
+{name:"ADELE",imgLocation:"./assets/images/Adele.jpg" },
 {name:"RAHMAN",imgLocation:"./assets/images/Rahman.jpg"},
 {name:"RAJA",imgLocation:"./assets/images/Raja.jpg"},
+{name:"EDSHEERAN",imgLocation:"./assets/images/Edsheeran.jpg"},
+{name:"TAYLORSWIFT",imgLocation:"./assets/images/Taylorswift.jpg"},
 
 ]
 
-var countCustomerClick;
+
 var countRemainingAttempts = 10;
 var foundMatch = false;
 var userGuess = "";
@@ -40,6 +42,8 @@ window.onload = function () {
 	displayComputerKeyboard();
 }
 
+
+
 pickChoice = function () {
 
 	computerPick = bandList[Math.floor(Math.random() * bandList.length)];
@@ -51,6 +55,7 @@ pickChoice = function () {
 
 resetGame = function () {
 	playMusic.src = "";
+	window.location.reload();
 }
 
 populateComputerGuess = function () {
@@ -86,6 +91,7 @@ populateResults = function () {
 		document.getElementById("lblRemainingAttempts").innerHTML = displaySuccessMessage;			
 		stopGame = true;
 		document.getElementById("imgDisplayPic").src = computerPick.imgLocation;
+		document.getElementById("imgDisplayPic").style.visibility = "visible";
 		playMusic.src = audioLocation +computerChoice + audioFormat;
 		
 		playMusic.play();

@@ -2,6 +2,7 @@
 body {
     height: 100%;
     /* The html and body elements cannot have any padding or margin. */
+
 }
 body {
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -91,13 +92,13 @@ h3 {
     height: 100%;
     /* Negative indent footer by it's height */
     
-    margin: 0 auto -40px;
+    margin: 0 auto -1em;
 }
 /* Set the fixed height of the footer here */
 
 #push,
 #footer {
-    height: 40px;
+    height: 1em;
 }
 #footer {
     background-color: #f5f5f5;
@@ -165,7 +166,9 @@ float: left;
 }
 #imgDisplayPic {
 
-    width: 40%;
+    
     margin-bottom: 2em;
+    visibility: hidden;
 
 }
+
