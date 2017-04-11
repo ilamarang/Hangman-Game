@@ -1,11 +1,12 @@
+//Declare all the required Global variables to track the game 
+
 var validKeyboardInputs = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
     'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z'
 ];
 var computerRandomArtist;
 
-
-
+// Array to hold the artist details, image and audio location.
 var bandList = [
 
     {
@@ -74,6 +75,11 @@ var playMusic = new Audio("");
 var computerScore = 0;
 var userScore = 0;
 
+/**
+ * Initilizes all variables to a default value
+ * @param {}  - None 
+ * @return {} - None 
+ */
 
 initialize = function() {
 
@@ -90,6 +96,12 @@ initialize = function() {
 
 }
 
+/**
+ * Begins the Game once the windlow is loaded.
+ * @param {}  - None 
+ * @return {} - None 
+ */
+
 
 window.onload = function() {
 
@@ -101,6 +113,11 @@ window.onload = function() {
 }
 
 
+/**
+ * Computer picks the random artist and eagerly loads the appropriate audio file.
+ * @param {}  - None 
+ * @return {} - None 
+ */
 
 pickChoice = function() {
 
@@ -110,6 +127,11 @@ pickChoice = function() {
     playMusic.load();
 }
 
+/**
+ * Resets the game and initialize the variables to appropriate values.
+ * @param {}  - None 
+ * @return {} - None 
+ */
 resetGame = function() {
     playMusic.src = "";
 
@@ -132,6 +154,11 @@ resetGame = function() {
 
 }
 
+/**
+ * Build screen elements based on the Computer's choice.
+ * @param {}  - None 
+ * @return {} - None 
+ */
 populateComputerGuess = function() {
 
     var elementBlankGuess = document.getElementById('displayCustomerGuess');
@@ -152,6 +179,11 @@ populateComputerGuess = function() {
     }
 
 }
+/**
+ * Populate the outcome of the click event. Checks to see if there are valid attempts and display message
+ * @param {}  - None 
+ * @return {} - None 
+ */
 populateResults = function() {
 
 
@@ -177,6 +209,11 @@ populateResults = function() {
 
 }
 
+/**
+ * Function to build the computer keyboard on the screen.
+ * @param {}  - None 
+ * @return {} - None 
+ */
 displayComputerKeyboard = function() {
 
     var keyboardButtons = document.getElementById("keyboardInputs");
@@ -195,6 +232,11 @@ displayComputerKeyboard = function() {
 
 }
 
+/**
+ * Main click event handler. Loops through the input selected and takes an appropriate action
+ * @param {}  - None 
+ * @return {} - None 
+ */
 clickEvent = function() {
 
     if (countRemainingAttempts > 0 && !stopGame) {
@@ -229,6 +271,12 @@ clickEvent = function() {
 
     }
 }
+
+/**
+ * JQuery function to control the carousel.
+ * @param {}  - None 
+ * @return {} - None 
+ */
 
 $(document).ready(function() {
     $('#myCarousel').carousel({
