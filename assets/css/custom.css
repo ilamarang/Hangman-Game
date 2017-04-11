@@ -7,7 +7,8 @@ body {
 body {
     font-family: 'chalkduster',fantasy,'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     overflow-x: hidden;
-    background-image: url("../images/music.jpg");
+    background-image: url("../images/nature.jpg");
+
 }
 p {
     font-size: 15px;
@@ -26,6 +27,8 @@ a.active {
 
 h2 {
     text-align: center;
+    color:white;
+    
 
 }
 body {
@@ -54,6 +57,8 @@ h1 {
 .social_media {
     background-color: white;
     margin-bottom: 2em;
+    border-radius: 0.5em;
+    
 }
 .navbar-fixed-bottom {
     background-color: grey;
@@ -198,13 +203,10 @@ background: #333333;
 #displayCustomerGuess {
     background: grey;
     border-radius: 0.5em;
-    background-image: url("../images/stones.jpg");
+    background-image: url("../images/nature.jpg");
     
 }
 #reset {
     background-image: url("../images/nature.jpg");
 }
 
-#displayResults {
-
-}

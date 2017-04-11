@@ -31,7 +31,7 @@ var bandList = [
         audioLocation: "./assets/audio/Rahman.mp3"
     }, {
         name: "ILAYARAJA",
-        imgLocation: "./assets/images/Ilayaraja.jpeg",
+        imgLocation: "./assets/images/Ilayaraja.jpg",
         audioLocation: "./assets/audio/Ilayaraja.mp3"
     }, {
         name: "EDSHEERAN",
@@ -71,6 +71,8 @@ var displayLostMessage;
 var displaySuccessMessage;
 var displayRemainingMessage;
 var playMusic = new Audio("");
+var computerScore = 0;
+var userScore = 0;
 
 
 initialize = function() {
@@ -95,6 +97,7 @@ window.onload = function() {
     pickChoice();
     populateComputerGuess();
     displayComputerKeyboard();
+    document.getElementById("lblDisplayScore").innerHTML = "Computer Score: " + computerScore + "<br>Your Score: " + userScore ;
 }
 
 
@@ -154,12 +157,15 @@ populateResults = function() {
 
     if (countRemainingAttempts === 0) {
         document.getElementById("lblRemainingAttempts").innerHTML = displayLostMessage;
+        computerScore++;
+        document.getElementById("lblDisplayScore").innerHTML = "Computer Score: " + computerScore + "<br>Your Score: " + userScore ;
     } else if (userGuess === computerRandomArtist.name) {
         document.getElementById("lblRemainingAttempts").innerHTML = displaySuccessMessage;
         stopGame = true;
         document.getElementById("imgDisplayPic").src = computerRandomArtist.imgLocation;
         document.getElementById("imgDisplayPic").style.visibility = "visible";
-        
+        userScore++;
+        document.getElementById("lblDisplayScore").innerHTML = "Computer Score: " + computerScore + "<br>Your Score: " + userScore ;
 
         playMusic.play();
 
