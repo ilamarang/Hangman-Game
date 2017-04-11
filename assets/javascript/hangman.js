@@ -301,3 +301,5 @@ $('.marquee').marquee({
     //true or false - should the marquee be duplicated to show an effect of continues flow
     duplicated: false
 }); 
+
+
